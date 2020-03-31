@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2017/6/4 20:15
+# @Time    : 2019/6/4 20:15
 # @Author  : hengxu
 # @File    : case.py
 from Interface.testFengzhuang import TestApi
@@ -8,7 +8,7 @@ from Public.log import LOG, logger
 import os
 from config.config_T import Config_Try_Num,TestPlanUrl
 path = os.getcwd() + '\\test_case_data\\case.xlsx'
-listid, listkey, listconeent, listurl, listfangshi, listqiwang, listname = datacel(path)
+listid, listkey, listConent, listurl, listfangshi, listqiwang, listname = datacel(path)
 from Public.panduan import assert_in
 @logger('测试')
 def testinterface():
@@ -21,10 +21,10 @@ def testinterface():
     error_num=0
     for i in range(len(listurl)):
         while error_num<=Config_Try_Num+1:
-            api = TestApi(url=TestPlanUrl+listurl[i], key=listkey[i], connent=listconeent[i], fangshi=listfangshi[i])
+            api = TestApi(url=TestPlanUrl+listurl[i], key=listkey[i], connent=listConent[i], fangshi=listfangshi[i])
             apijson = api.getJson()
             if apijson['code'] == 0:
-                LOG.info('inputdata> 参数:%s, url:%s ,返回:%s,预期:%s' % (listconeent[i], listurl[i], apijson, listqiwang[i]))
+                LOG.info('inputdata> 参数:%s, url:%s ,返回:%s,预期:%s' % (listConent[i], listurl[i], apijson, listqiwang[i]))
                 assert_re = assert_in(asserqiwang=listqiwang[i], fanhuijson=apijson)
                 if assert_re['code'] == 0:
                     list_json.append(apijson['result'])

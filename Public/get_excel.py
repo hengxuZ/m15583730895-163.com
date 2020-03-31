@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2017/6/4 20:35
+# @Time    : 20196/4 20:35
 # @Author  : hengxu
 # @File    : get_excel.py
 import xlrd
@@ -12,7 +12,7 @@ def datacel(filrpath):
         nrows=me.nrows
         listid=[]
         listkey=[]
-        listconeent=[]
+        listConent=[]
         listurl=[]
         listfangshi=[]
         listqiwang=[]
@@ -21,12 +21,12 @@ def datacel(filrpath):
         for i in range(1,nrows):
             listid.append(me.cell(i,0).value)
             listkey.append(me.cell(i,2).value)
-            listconeent.append(me.cell(i,3).value)
+            listConent.append(me.cell(i,3).value)
             listurl.append(me.cell(i,4).value)
             listname.append(me.cell(i,1).value)
             listfangshi.append((me.cell(i,5).value))
             listqiwang.append((me.cell(i,6).value))
-        return listid,listkey,listconeent,listurl,listfangshi,listqiwang,listname
+        return listid,listkey,listConent,listurl,listfangshi,listqiwang,listname
     except Exception as e:
         LOG.info('打开测试用例失败，原因是:%s'%e)
         return
