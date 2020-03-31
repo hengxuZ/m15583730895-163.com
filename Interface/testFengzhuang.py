@@ -13,8 +13,8 @@ class TestApi(object):
 		self.fangshi=fangshi
 	def testapi(self):
 		if self.fangshi=='POST':
-			self.parem = {'key': self.key, 'info': self.connent}
-			self.response=reques.post(self.url,self.parem)
+			# self.parem = {'key': self.key, 'info': self.connent}
+			self.response=reques.post(self.url,self.connent)
 		elif self.fangshi=="GET":
 			self.parem = {'key': self.key, 'info': self.connent}
 			self.response = reques.get(url=self.url,params=self.parem)

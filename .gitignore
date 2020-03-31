@@ -1,2 +1,10 @@
 log/
 test_Report/
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build

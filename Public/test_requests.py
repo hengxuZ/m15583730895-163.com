@@ -6,7 +6,8 @@ from config.config_T import Authorization
 @logger('requests封装')
 class requ():
     def __init__(self):
-        self.headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:51.0) Gecko/20100101 Firefox/51.0","Authorization":Authorization}
+        self.headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:51.0) Gecko/20100101 Firefox/51.0","Authorization":Authorization,
+                        "Content-Type":"application/json"}
     def get(self, url,params):#get消息
         try:
             r = requests.get(url, params=params,headers=self.headers)
@@ -17,9 +18,9 @@ class requ():
             LOG.info('get请求出错，出错原因:%s'%e)
             return {'code': 1, 'result': 'get请求出错，出错原因:%s'%e}
     def post(self, url, params):#post消息
-        data = json.dumps(params)
+        # data = json.dumps(params)
         try:
-            r =requests.post(url,params=data,headers=self.headers)
+            r =requests.post(url,data=params,headers=self.headers)
             json_response = json.loads(r.text)
             return {'code': 0, 'result': json_response}
         except Exception as e:
