@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2017/6/4 20:35
-# @Author  : lileilei
+# @Author  : hengxu
 # @File    : get_excel.py
 import xlrd
 from Public.log  import LOG,logger

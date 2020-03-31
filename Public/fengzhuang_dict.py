@@ -1,7 +1,7 @@
 """ 
-@author: lileilei
+@author: hengxu
 @file: python_dict.py 
-@time: 2018/6/15 13:54 
+@time: 2019/6/15 13:54 
 """
 '''字典取值'''
 def res(d,code):

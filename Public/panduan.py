@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Date    : 2017-08-02 21:54:08
-# @Author  : lileilei
+# @Author  : hengxu
 from Public.fengzhuang_dict import res
 from .log import LOG,logger
 @logger('断言测试结果')

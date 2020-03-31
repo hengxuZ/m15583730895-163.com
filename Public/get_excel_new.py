@@ -1,7 +1,7 @@
 """ 
-@author: lileilei
+@author: hengxu
 @file: get_excel_new.py 
-@time: 2018/4/30 11:04 
+@time: 2019/4/30 11:04 
 """
 '''读取Excel'''
 import xlrd
